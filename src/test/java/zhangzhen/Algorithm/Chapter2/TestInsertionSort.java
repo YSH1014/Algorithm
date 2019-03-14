@@ -18,6 +18,10 @@ public class TestInsertionSort {
     @Test
     public void boundary() {
 
+        Integer[] array = new Integer[]{1};
+        Integer[] result =  new Integer[]{1};
+        solution.insertionSort(array,new IntegerComparator());
+        Assertions.assertArrayEquals(result,array);
     }
 
     @Test

@@ -13,6 +13,8 @@ public class InsertionSort<T> {
         终止：array[A.length]之前是排好序的
      */
     public void insertionSort(T[] array, Comparator comparator){
+
+        if( array==null || comparator==null) throw new NullPointerException();
         for(int i = 1;i<array.length;i++){
             T key = array[i];
             int j = i-1;
