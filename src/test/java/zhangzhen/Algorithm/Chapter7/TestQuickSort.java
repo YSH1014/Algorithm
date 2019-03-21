@@ -24,4 +24,13 @@ public class TestQuickSort {
     public void negative() {
 
     }
+
+    @Test
+    public void testSelect(){
+        Integer[] array = new Integer[]{1,2,6,3,4};
+        Integer result = 3;
+        Assertions.assertEquals(result,solution.selectI(array,new IntegerComparator(),3));
+        Assertions.assertEquals(Integer.valueOf(4),solution.selectI(array,new IntegerComparator(),4));
+
+    }
 }

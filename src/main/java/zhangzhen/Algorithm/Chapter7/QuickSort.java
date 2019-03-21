@@ -6,6 +6,18 @@ public class QuickSort<T> {
     public void sort(T[] array, Comparator<T> comparator){
         quickSortCore(array,comparator,0,array.length);
     }
+    public T selectI(T[] array,Comparator<T> comparator,int i){
+        if( i > array.length) return null;
+
+        return selectCore(array,comparator,0,array.length,i);
+    }
+    private T selectCore(T[] array,Comparator<T> comparator,int l,int r,int i){
+        if(l+1>=r) return array[l];
+        int m  =partition(array,comparator,l,r);
+
+        if( i <= m-l) return selectCore(array,comparator,l,m,i);
+        else return selectCore(array,comparator,m,r,i-(m-l));
+    }
     private void quickSortCore(T[] array,Comparator<T> comparator,int l,int r){
         if(l+1 >= r) return;
         int m =  partition(array,comparator,l,r);
